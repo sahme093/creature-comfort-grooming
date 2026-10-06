@@ -8,68 +8,64 @@
 // ============================================================================
 
 export const salon = {
-  name: "Your Salon Name",
-  shortName: "Your Salon",
+  name: "Creature Comfort Shop",
+  shortName: "Creature Comfort",
 
-  // Used in the hero heading as: "Pet grooming {highlight} {city}"
-  heroKicker: "Pet grooming",
-  heroHighlight: "in",
-  heroCity: "Your City",
+  // Used in the hero heading as: "{kicker} {highlight} {city}"
+  heroKicker: "Dog grooming with",
+  heroHighlight: "love",
+  heroCity: "in Riverside",
 
-  tagline: "Dogs & cats · Your City, ST",
+  tagline: "Dog grooming · Riverside, CA",
 
   description:
-    "Add a short introduction here — what makes your grooming salon different, which pets you welcome, and why new clients should book with you.",
+    "We treat your pets as if they were our own. Every pet always has the same groomer, so they’re greeted by a familiar face each visit. It’s like doggie daycare — we love on them and keep them with us.",
 
-  // E.164 format — used for tel: / sms: links. +1 555 555 0100 is a reserved
-  // fictional number block, safe to leave in place until you add a real one.
-  phone: "+15555550100",
-  phoneDisplay: "(555) 555-0100",
+  // E.164 format — used for tel: / sms: links.
+  phone: "+19513591957",
+  phoneDisplay: "(951) 359-1957",
 
   email: "", // leave blank to hide the "send by email" fallback link
 
   address: {
-    line1: "123 Main Street",
-    city: "Your City",
-    state: "ST",
-    zip: "00000",
+    line1: "9990 Indiana Ave #1",
+    city: "Riverside",
+    state: "CA",
+    zip: "92503",
   },
 
   // Google Maps embed + link query. Kept separate from the address object
   // so you can hand-tune the query string without reformatting the address.
-  mapsQuery: "123 Main Street, Your City, ST 00000",
+  mapsQuery: "9990 Indiana Ave #1, Riverside, CA 92503",
 
   // 0 = Sunday ... 6 = Saturday, matching Date#getDay().
   hours: [
     { day: "Sunday", open: null, close: null },
-    { day: "Monday", open: "9:00 am", close: "5:00 pm" },
-    { day: "Tuesday", open: "9:00 am", close: "5:00 pm" },
-    { day: "Wednesday", open: "9:00 am", close: "5:00 pm" },
-    { day: "Thursday", open: "9:00 am", close: "5:00 pm" },
-    { day: "Friday", open: "9:00 am", close: "5:00 pm" },
-    { day: "Saturday", open: "9:00 am", close: "2:00 pm" },
+    { day: "Monday", open: null, close: null },
+    { day: "Tuesday", open: "9:00 am", close: "6:00 pm" },
+    { day: "Wednesday", open: null, close: null },
+    { day: "Thursday", open: "9:00 am", close: "6:00 pm" },
+    { day: "Friday", open: "9:00 am", close: "6:00 pm" },
+    { day: "Saturday", open: "9:00 am", close: "6:00 pm" },
   ],
-  hoursSummary: "Mon–Fri, 9am–5pm · Sat 9am–2pm",
+  hoursSummary: "Tue, Thu, Fri & Sat · 9am–6pm",
+
+  // Drop-off windows offered in the booking form.
+  dropOffTimes: ["9–11 am", "11 am–1 pm", "1–3 pm", "3–5 pm"],
 
   // Toggle to show/hide "from $X" price labels next to each service.
   // Prices below are placeholder sample values — replace with your own.
   showPrices: false,
 
+  // Dogs only. Add a `cat: [...]` list (and `sizes.cat`) to bring back the
+  // cat column and the dog/cat toggle in the booking form.
   services: {
     dog: [
-      { name: "Full service grooming", price: 80 },
-      { name: "Bathing and blow dry", price: 40 },
-      { name: "Nail trimming", price: 15 },
+      { name: "Full grooming & haircut", price: 70 },
+      { name: "Bath & brush", price: 40 },
+      { name: "Nail clipping", price: 15 },
       { name: "Ear cleaning", price: 10 },
-      { name: "Teeth brushing", price: 10 },
-      { name: "Anal gland expression", price: 15 },
-      { name: "Flea and tick treatment", price: 20 },
-    ],
-    cat: [
-      { name: "Cat grooming", price: 65 },
-      { name: "Cat bathing", price: 50 },
-      { name: "Cat nail trimming", price: 15 },
-      { name: "Cat ear cleaning", price: 10 },
+      { name: "Bows & finishing touches", price: 0 },
     ],
   },
 
@@ -81,101 +77,85 @@ export const salon = {
       ["Large", "50–90 lb"],
       ["XL", "90+ lb"],
     ],
-    cat: [
-      ["Small", "under 8 lb"],
-      ["Medium", "8–12 lb"],
-      ["Large", "12+ lb"],
-    ],
   },
 
-  // Sample gallery — swap these files in /public/assets and update the alt
-  // text to describe each real photo.
+  // Shown in the hero instead of decorative shapes.
+  storefront: {
+    src: "/assets/storefront.jpg",
+    alt: "Creature Comfort Shop storefront, unit 1, with “Welcome Fuzzy Friends” painted on the door",
+  },
+
   gallery: [
-    { src: "/assets/p5.webp", alt: "Sample gallery photo — replace with your own grooming photos" },
-    { src: "/assets/p1.webp", alt: "Sample gallery photo — replace with your own grooming photos" },
-    { src: "/assets/p3.webp", alt: "Sample gallery photo — replace with your own grooming photos" },
+    { src: "/assets/golden-poolside.jpg", alt: "Fluffy golden retriever in a blue bandana and ear bows, fresh from grooming" },
+    { src: "/assets/easter-pups.jpg", alt: "Two freshly groomed dogs in Easter bandanas under a flower-covered gazebo" },
+    { src: "/assets/holiday-pups.jpg", alt: "Holiday portraits of two groomed dogs in red bandanas by a Christmas tree" },
   ],
 
-  // Sample reviews — fictional names and quotes. Replace with your own
-  // reviews (e.g. copied from Google) before publishing.
+  // From Google reviews (last names shortened to an initial).
   reviews: [
     {
-      name: "Jordan P.",
+      name: "Cheryl L.",
+      when: "6 months ago",
+      text: "Our pupster Roady loves going to Cheri, she loves all her little clients. I highly recommend her, she’s gentle, caring, and respectful. Absolutely 5+ stars from us. :)",
+    },
+    {
+      name: "Marcia K.",
       when: "3 years ago",
-      text: "Wonderful experience from start to finish! The groomer was so patient with my pup and did an amazing job with the cut. Highly recommend!",
+      text: "The best groomer in town! I have taken my shih-tzus in to Cherrie for years now and my fur babies love her!!! They always look amazing when I pick them up! Cherrie is the best!!!!",
     },
     {
-      name: "Sam R.",
-      when: "a year ago",
-      text: "Such a great job on both of our pets! Very patient with them and takes the time to get every detail right. They also send lots of update photos during the appointment, which we love.",
+      name: "Maggie W.",
+      when: "6 years ago",
+      text: "I was recommended to Cheri by my sister. First, her communication is great, whether by text or call. I was able to get in fairly quick. The shop was clean. She was sweet as can be on the phone and even sweeter in person. She not only grooms the dogs but will let you know if she sees something on your pet. My dog had yeast in her ear, which explains why she’s been scratching at it the last week. She was very honest when I asked for service that she could have just charged me for, but advised that it was an unnecessary service. My dog came back cute and a day later, her bows are still on. That’s a first!! Great place, great owner, highly recommend.",
     },
     {
-      name: "Taylor M.",
-      when: "a year ago",
-      text: "Great job with our almost one-year-old puppy. Pricing was reasonable and they were very patient with our hyper little guy.",
+      name: "Jan K.",
+      when: "6 years ago",
+      text: "Cheri, the owner, genuinely loves the pets she grooms and takes the time to speak with the owners and addresses their individual concerns and requests with a smile. Her knowledge and skill is very impressive. My Yorkie loves his time with her and we thoroughly adore and love her care and thoughtfulness. She is by far the best groomer in Riverside as she lovingly pampers your precious fur babies.",
     },
     {
-      name: "Casey L.",
-      when: "2 years ago",
-      text: "An incredible groomer — my dog was completely comfortable the whole time. Loved getting text updates with cute photos throughout the appointment. Highly recommend!",
-    },
-    {
-      name: "Morgan T.",
-      when: "3 weeks ago",
-      text: "Did an amazing job on our dog and left him looking great. We'll definitely be returning customers!",
-    },
-    {
-      name: "Alex W.",
-      when: "2 years ago",
-      text: "We love bringing our dogs here — the team is so good with them, even with tricky coats and big personalities. Incredible work every time!",
-    },
-    {
-      name: "Riley M.",
-      when: "a year ago",
-      text: "I've been taking my dog here weekly and I'm so happy with how great they always look. Wouldn't go anywhere else.",
-    },
-    {
-      name: "Amanda P.",
-      when: "2 years ago",
-      text: "Always responds promptly and my pet leaves happier and looking better every time. Highly recommend!",
+      name: "Barb M.",
+      when: "8 years ago",
+      text: "Best grooming place, my dog loves it there. I’ve been taking her there for over 3 years. Would not take her anywhere else. The groomers are friendly, very best! I give them a 5 star rating.",
     },
   ],
 
-  // Sample neutral palette — not tied to any brand. Applied at runtime as
-  // CSS custom properties (see src/main.jsx), so this object is the ONE
-  // place that defines the site's color palette. Swap these for your own
-  // brand colors; keep accentStrong/accentDeep/accentLabel dark enough to
+  // Cozy "creature comforts" palette: warm cream, cocoa ink, terracotta
+  // accent and a soft sage. Applied at runtime as CSS custom properties
+  // (see src/main.jsx), so this object is the ONE place that defines the
+  // site's colors. accentStrong/accentDeep/accentLabel are dark enough to
   // clear WCAG AA contrast against the light backgrounds they sit on.
   colors: {
-    bg: "#FAF6EF",
-    surface: "#FFFFFF",
-    surfaceAlt: "#F3EDE3",
-    ink: "#1D1B18",
-    inkSoft: "#4F4A43",
-    inkMute: "#6B655C",
-    border: "rgba(29,27,24,.1)",
-    borderStrong: "rgba(29,27,24,.18)",
-    accent: "#EFA73C",
-    accentHover: "#F3B657",
-    // Darkened slightly from the source design's #C98323 / #B06F14 so text
-    // set in these colors clears WCAG AA contrast against the cream/white
-    // backgrounds they sit on (large hero text needs 3:1, the small eyebrow
-    // labels need 4.5:1) — same hue, just a touch deeper.
-    accentStrong: "#B8741A",
-    accentDeep: "#9A5F0E",
-    accentLabel: "#8A5A10",
-    highlight: "#FDF1DC",
-    selection: "#F4D49B",
-    onDark: "#FAF6EF",
+    bg: "#FBF6EE",
+    surface: "#FFFDF9",
+    surfaceAlt: "#E8EEE2",
+    ink: "#2F2622",
+    inkHover: "#4A3C35",
+    inkSoft: "#5A4D45",
+    inkMute: "#6F625A",
+    onDarkSoft: "#DCCFC3",
+    headerBg: "rgba(251,246,238,.94)",
+    placeholder: "#EFE5D7",
+    border: "rgba(47,38,34,.1)",
+    borderStrong: "rgba(47,38,34,.2)",
+    accent: "#E8A07A",
+    accentHover: "#EEB291",
+    accentStrong: "#B4552B",
+    accentDeep: "#9C4724",
+    accentLabel: "#8F4220",
+    sage: "#A9BC9C",
+    highlight: "#FCE8DA",
+    selection: "#F5C9AE",
+    onDark: "#FBF6EE",
     error: "#B3261E",
-    openDot: "#3E9B5A",
+    openDot: "#4F8A4A",
     closedDot: "#C9A27A",
   },
 
   fonts: {
-    display: "'Josefin Sans', sans-serif",
-    body: "'Jost', system-ui, sans-serif",
+    display: "'Fraunces', Georgia, serif",
+    body: "'Nunito', system-ui, sans-serif",
     googleFontsHref:
-      "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Jost:wght@400;500;600&display=swap",
+      "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Nunito:wght@400;600;700&display=swap",
   },
 };

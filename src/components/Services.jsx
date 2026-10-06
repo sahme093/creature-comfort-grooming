@@ -7,7 +7,7 @@ function ServiceList({ title, items }) {
       {items.map((item) => (
         <div className="service-row" key={item.name}>
           <span className="service-row__name">{item.name}</span>
-          {salon.showPrices && (
+          {salon.showPrices && item.price > 0 && (
             <span className="service-row__price">from ${item.price}</span>
           )}
         </div>
@@ -29,7 +29,9 @@ export default function Services() {
 
         <div className="service-groups">
           <ServiceList title="Dogs" items={salon.services.dog} />
-          <ServiceList title="Cats" items={salon.services.cat} />
+          {salon.services.cat?.length > 0 && (
+            <ServiceList title="Cats" items={salon.services.cat} />
+          )}
         </div>
       </div>
     </section>

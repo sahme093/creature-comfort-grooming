@@ -24,7 +24,7 @@ export default function Seo() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: salon.name,
-      image: `${window.location.origin}/assets/logo.webp`,
+      image: `${window.location.origin}/assets/logo.svg`,
       telephone: salon.phoneDisplay,
       description: salon.description,
       address: {

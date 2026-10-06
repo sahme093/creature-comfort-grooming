@@ -1,0 +1,3 @@
+# Cloudflare Pages: tell search engines not to index any page or file.
+/*
+  X-Robots-Tag: noindex, nofollow
